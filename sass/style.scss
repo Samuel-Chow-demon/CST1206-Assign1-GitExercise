@@ -15,6 +15,106 @@ body {
 
 header{
 
+  #head{
+    @include gridTemplateArea(repeat(3, 1fr), 1fr, "H1 H2 H3");
+    place-items: center;
+
+    height: 20%;
+    margin: 2px;
+
+    button{
+      @include flexContainer(row, center, center);
+      border: 0px;
+      border-radius: 4px;
+
+      background-color: rgb(209, 203, 203);
+
+      padding: 5px 10px;
+
+      &:hover{
+        background-color: rgb(168, 164, 164);
+      }
+    }
+
+    h1{
+      font-family: $font-family-Lobster;
+      font-size: $header-font-size;
+
+      color:orange;
+      margin: 15px;
+    }
+
+    #weather{
+      @include gridTemplateArea(repeat(2, 1fr), 2fr, "H1 H2" "H3 H3");
+      margin: 5px;
+
+      span {
+        @include flexContainer(column, space-between, center);
+        font-size: $xxs-font-size;
+        margin: 2px;
+
+        i {
+          font-size: $s-font-size;
+          color: rgb(92, 92, 89);
+        }
+
+        &:first-child i{
+            margin-top: 8px;
+            margin-bottom: 11px;
+        }
+
+        &:last-child {
+          grid-column: span 2;
+        }
+      }
+    }
+  }
+
+  nav{
+
+    ul{
+      @include gridTemplateArea(repeat(4, 1fr), repeat(2, 1fr), "N1 N2 N3 N4" "N5 N6 N7 N8");
+      place-items: center;
+
+      list-style-type: none;
+      font-size: $ms-font-size;
+
+      li{
+        @include flexContainer(column, center, center);
+
+        background-color: $section-color;
+        border-radius: 8px;
+        width: 80%;
+        margin: 5px;
+
+        &:last-child{
+          font-size: $xs-font-size;
+        }
+
+        &:hover{
+          background-color: rgb(189, 79, 79);
+        }
+
+        &.active{
+          background-color: rgb(100, 64, 64);
+        }
+
+        i{
+          font-size: $sub-header-font-size;
+          margin: 5px;
+          pointer-events: none;
+        }
+
+        $nav-color-num: length($colors-nav);
+        @for $i from 1 through $nav-item{
+          &:nth-child(#{$nav-color-num}n + #{$i}){
+            $index: ($i - 1) % $nav-color-num + 1;
+            color: nth($colors-nav, $index);
+          }
+        }
+      }
+    }
+  }
 }
 
 section{

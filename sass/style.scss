@@ -151,6 +151,24 @@ section{
       margin: 10px;
     }
 
+    ul{
+      @include flexContainer(column, center, center);
+      list-style-type: none;
+      margin: 10px;
+
+      font-size: $m-font-size;
+
+      li{
+        @include flexContainer(row, center, center);
+
+        width: 100%;
+        margin: 10px;
+
+        i{
+          margin: 0 15px;
+        }
+      }
+    }
 
     i{
       margin-left: 5px;
@@ -202,6 +220,18 @@ section{
 
     p strong{
       color: rgb(230, 78, 103);
+    }
+  }
+
+  #section-gethere{
+    #transport {
+      font-size: $s-font-size;
+      li{
+        @include gridTemplateArea(1fr 6fr, 1fr, ". .");
+        i{
+          @include flexContainer(row, center, center);
+        }
+      }
     }
   }
 

@@ -3,8 +3,12 @@
 @import 'modules/variables';
 
 :root{
+  // --scroll-y-threshold-disp-up-button: #{$scroll-Y-display-to-top-button};
+  // --other-topic-max-char: #{$other-topics-max-char-display};
+
   --m-font-size: #{$m-font-size};
   --sub-header-font-size: #{$sub-header-font-size};
+  --question-background-color: #{$question-background-color};
 }
 
 * {
@@ -235,6 +239,37 @@ section{
     }
   }
 
+  #section-faq{
+    i{
+      color: #c96826;
+    }
+
+    #faq{
+      font-size: $ms-font-size;
+      margin: 0px 10%;
+      margin-bottom: 5%;
+      li{
+        @include flexContainer(row, space-between, center);
+      }
+
+      .faq-question {
+        cursor: pointer;
+        font-weight: bold;
+      
+        border-radius: 4px;
+        background-color: $question-background-color;
+        padding: 10px;
+      }
+
+      .faq-answer {
+        display: none;
+      }
+
+      .faq-answer-expand {
+        display: block;
+      }
+    }
+  }
 
   }
 

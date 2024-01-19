@@ -1,0 +1,90 @@
+
+header{
+
+  #head{
+
+    button{
+      font-size: $xs-font-size;
+      padding: 10px 10px;
+    }
+
+    h1{
+      font-size: $xl-header-font-size;
+      margin: 15px;
+    }
+
+    #weather{
+
+      span{
+        font-size: $xs-font-size;
+        margin: 5px;
+
+        i{
+          font-size: $header-font-size;
+        }
+
+        &:first-child i{
+          margin-top: 20px;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+
+section{
+
+  article{
+
+    h2{
+      font-size: $sub-header-font-size;
+    }
+
+    p{
+      font-size: $s-font-size;
+    }
+
+  }
+
+  #section-home{
+    #advertisement{
+      .moving-text {
+        font-size: $m-font-size;
+      }
+    }
+  }
+
+  #section-ticket #section-ticket-img{
+    @include flexContainer(row, center, center);
+    img{
+      width: 80%;
+    }
+  }
+
+  #section-gethere{
+    #transport {
+      font-size: $m-font-size;
+      li{
+        @include gridTemplateArea(1fr 4fr, 1fr, ". .");
+      }
+    }
+  }
+
+  #section-contact{
+    input {
+      width: min(350px, 40%);
+    }
+    textarea{
+      width: min(500px, 60%);
+    }
+    #contact{
+      font-size: min($m-font-size, 3vw);
+    }
+    #section-contact-img{
+      @include flexContainer(row, center, center);
+      img{
+        width: 60%;
+      }
+    }
+  }
+}

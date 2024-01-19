@@ -118,6 +118,62 @@ header{
 }
 
 section{
+  @include flexContainer(column, center, center);
+
+  .hidden{
+    display:none;
+  }
+
+  article{
+    width: 95%;
+
+    background-color: $section-color;
+    border: none;
+    border-radius: $article-border-radius;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    margin: 0px 50px;
+    margin-top: 15px;
+    padding: 2px;
+
+    img{
+      border-radius: $article-border-radius;
+      width: 100%;
+    }
+
+    h2{
+      @include flexContainer(row, center, center);
+      margin: 10px;
+    }
+
+
+    i{
+      margin-left: 5px;
+    }
+
+    p{
+      text-align: justify;
+      margin: 20px;
+      strong{
+        &.offer{
+          display: inline-block;
+          width: 80px;
+        }
+      }
+    }
+
+  }
+
+  #section-home{
+    i{
+      color: #db9f1f;
+    }
+
+  }
+
+
+  }
+
   #home-logo{
     @include flexContainer(row, center, center);
     border: none;

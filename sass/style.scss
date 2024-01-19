@@ -199,6 +199,57 @@ section{
       color: #db9f1f;
     }
 
+    #advertisement{
+      width: 100%;
+      overflow: hidden;
+      border: none;
+
+      .moving-text {
+        font-size: $s-font-size;
+        white-space: nowrap;
+        margin: 0px 5px;
+        position: relative;
+        display: inline-block;
+        padding: 5px;
+        animation: moveText 10s linear infinite alternate, blinkText 0.5s infinite alternate;
+        animation-play-state: running; // set as running first
+    
+        @keyframes moveText {
+          from {
+            transform: translateX(200%); // Starting from the right
+          }
+          to {
+            transform: translateX(-100%); // Move text to the left
+          }
+        }
+
+        @keyframes blinkText {
+          0% {
+            opacity: 0; // Hidden
+          }
+          100% {
+            opacity: 1; // Show
+          }
+        }
+    
+        &:hover {
+          animation-play-state: paused; /* Pause the animation on hover */
+        }
+    
+        &.red {
+          color: #ce7e7e;
+        }
+    
+        &.blue {
+          color: #5264b8;
+        }
+    
+        &.green {
+          color: #449e44; 
+        }
+      }
+    }
+  }
 
   #section-news{
     p{
